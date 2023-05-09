@@ -15,10 +15,10 @@ const initialState = {
 export const authSlice = createSlice({
     name: "auth",
     initialState,
-    // reducers are funstions that help modify the state
+    // reducers are functions that help modify the state
     reducers: {
         setMode: (state) => {
-            //changing the state of the made (not directly even though it looks like you're changing state directly)
+            //changing the state of the mode (not directly even though it looks like you're changing state directly)
             state.mode = state.mode === "light" ? "dark" : "light";
         },
         setLogin: (state, action) => {

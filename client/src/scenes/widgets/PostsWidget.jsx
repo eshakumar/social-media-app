@@ -6,23 +6,23 @@ import PostWidget from "./PostWidget";
 const PostsWidget = ({ userId, isProfile = false }) => {
     const dispatch = useDispatch();
     const posts = useSelector((state) => state.posts);
+    console.log(posts);
     const token = useSelector((state) => state.token);
-    console.log("Posts are ", posts);
 
     const getPosts = async () => {
-        console.log("getPosts Start")
         const response = await fetch("http://localhost:3001/posts", {
             method: "GET",
             headers: { Authorization: `Bearer ${token}` },
         });
-        const data = await response.json();
-        console.log(data)
-        console.log(response.ok)
-        if (response.ok) {
-            dispatch(setPosts({ posts: data }));
-        } else {
-            console.error("Call to getPosts failed.")
+        let data = [];
+        try {
+            data = await response.json();
         }
+        catch (err) {
+            console.error("Failed to fetch posts")
+            return;
+        }
+        dispatch(setPosts({ posts: data }));
     };
 
     const getUserPosts = async () => {
@@ -33,18 +33,17 @@ const PostsWidget = ({ userId, isProfile = false }) => {
         const data = await response.json();
         dispatch(setPosts({ posts: data }));
     };
-    console.log("usProfile ", isProfile)
-    console.log("Token ", token)
+
     useEffect(() => {
-        getPosts();
+
+        getPosts()
         // if (isProfile) {
         //     getUserPosts();
         // } else {
         //     getPosts();
         // }
     }, []) // eslint-disable-line react-hooks/exhaustive-deps
-    console.log("PostsWidget.jsx: Here")
-    console.log(posts);
+
 
     return (
         <>

@@ -19,25 +19,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
     const main = palette.neutral.main;
     const medium = palette.neutral.medium;
 
-    // const isFriend = friends.find((friend) => friend === friendId);
-    // const isFriend = Boolean(friends[friendId]);
-    // for (let i = 0; i < friends.length; i++) {
-    //     console.log(friends[i]);
-    // }
-    // console.log(friends[0]);
-    // const isFriend = true;
-    // console.log(isFriend);
-
-    // if (Array.isArray(friends)) {
-    //     console.log("it's an array");
-    // } else {
-    //     console.log("it's not an array")
-    // }
-    // console.dir(friends);
     const isFriend = friends.find((friend) => friend._id === friendId);
-    // console.log("isFriends:", isFriend);
-    // console.log("friends", friends);
-    // const isFriend = true;
 
     const patchFriend = async () => {
         const response = await fetch(
