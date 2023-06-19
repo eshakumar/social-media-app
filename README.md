@@ -2,7 +2,7 @@
 
 This is a social media app built on the MERN stack using Redux for state management.
 
-Check it out at https://social-media-frontend-slio.onrender.com/home 
+Check it out at https://social-media-frontend-slio.onrender.com/
 
 **Demo Login**
 Username: demo@demo.com
