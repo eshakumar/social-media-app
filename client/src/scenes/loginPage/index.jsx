@@ -29,7 +29,10 @@ const LoginPage = () => {
                 backgroundColor={theme.palette.background.alt}
             >
                 <Typography fontWeight="500" variant="h5" sx={{ mb: "1.5rem" }}>
-                    Welcome to Sociopedia, the social media for Sociopaths!
+                    Welcome to Sociopedia!
+                </Typography>
+                <Typography fontWeight="500" variant="h5" sx={{ mb: "1.5rem" }}>
+                    !!Caution!! If you are creating an account, please do not use any real passwords.
                 </Typography>
                 <Form />
             </Box>
